@@ -4,18 +4,22 @@ import {connect} from 'react-redux';
 class Window extends Component {
     
     render(){
-        const {name} = this.props;
+        const {name, city} = this.props;
 
         return (
-            <p> {name} </p>
+            <div>
+            <p> {name} is from {city}. </p>
+            
+            </div>
         )
     }
 }
 function mapStateToProps(state){
-    const {name} = state
+    const {name, city} = state
 
     return {
-        name
+        name,
+        city
     }
 }
 export default connect(mapStateToProps)(Window)

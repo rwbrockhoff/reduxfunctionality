@@ -17,4 +17,5 @@ button {
 div.trooper {
   display: flex;
   flex-direction: column;
+  
 }

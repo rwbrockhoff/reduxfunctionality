@@ -1,23 +1,23 @@
 const initialState = {
     name: "Johnny",
-    city: '',
+    city: "Tacoma",
     st: ''
 }
 
-const UPDATE_NAME = 'UPDATE_NAME';
+const UPDATE_INFO = 'UPDATE_INFO';
 
 export default function reducer(state = initialState, action){
     switch (action.type) {
-        case UPDATE_NAME :
-        return Object.assign({}, state, {name: action.payload})
+        case UPDATE_INFO :
+        return {...state, ...action.payload}
     default: 
         return state
     }
 }
 
-export function updateName(val){
+export function updateInfo(val){
     return {
-        type: UPDATE_NAME,
+        type: UPDATE_INFO,
         payload: val
     }
 }

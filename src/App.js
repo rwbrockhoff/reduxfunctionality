@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {connect} from 'react-redux';
-import {updateName} from './ducks/reducer';
+import {updateInfo} from './ducks/reducer';
 import Window from './Window';
 
 
@@ -10,18 +10,22 @@ class App extends Component {
     super()
 
     this.state = {
-      input: ''
+      name: '', 
+      city: ''
     }
 
   }
   render() {
-    const {updateName} = this.props
+    const {updateInfo} = this.props
     return (
       <div className="trooper">
       <div className="App">
-        <input onChange={(e) => this.setState({input: e.target.value})}/>
+        <h4> Name: </h4>
+        <input onChange={(e) => this.setState({name: e.target.value})}/>
+        <h4> City: </h4>
+        <input onChange={ (e) => this.setState({city: e.target.value})}/>
 
-        <button onClick={() => updateName(this.state.input)}> Submit </button>
+        <button onClick={() => updateInfo(this.state)}> Submit </button>
       </div>
       <div>
         <Window/>
@@ -32,11 +36,12 @@ class App extends Component {
 }
 
 function mapStateToProps(state){
-  const {name} = state
+  const {name, city} = state
   return {
-    name
+    name,
+    city
   }
   
 }
 
-export default connect(mapStateToProps, {updateName})(App)
+export default connect(mapStateToProps, {updateInfo})(App)
