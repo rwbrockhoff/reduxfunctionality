@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <div className="trooper">
       <div className="App">
-        <h4> Name: </h4>
+        <h4> Name:    </h4>
         <input onChange={(e) => this.setState({name: e.target.value})}/>
         <h4> City: </h4>
         <input onChange={ (e) => this.setState({city: e.target.value})}/>
