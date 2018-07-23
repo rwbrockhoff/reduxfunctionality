@@ -1,7 +1,7 @@
 const initialState = {
     name: "Johnny",
     city: "Tacoma",
-    st: ''
+    st: 'Forever Washington'
 }
 
 const UPDATE_INFO = 'UPDATE_INFO';
